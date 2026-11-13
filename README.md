@@ -62,15 +62,15 @@ Each book record contains the following details:
 - **Development Environment:** Linux Terminal
 
 ## Project Structure
-File - Description 
-main.c - Main program 
-library.c - Library-related operations 
-library.h - Library function declarations 
-file.c - File handling operations 
-file.h - File handling function declarations 
-types.h - User-defined data types 
-books.txt - File for storing book information 
-makefile - Automates compilation and linking 
+File      - Description. 
+main.c    - Main program 
+library.c - Library-related operations. 
+library.h - Library function declarations. 
+file.c    - File handling operations.
+file.h    - File handling function declarations. 
+types.h   - User-defined data types.
+books.txt - File for storing book information. 
+makefile  - Automates compilation and linking. 
 
 ## ⚙️ Concepts Implemented
 
@@ -111,8 +111,23 @@ Library_Management_System/
 
 ## 🚀 Compilation and Execution
 
+-library:main.o library.o file.o 
+	cc main.o library.o file.o -o library
 
+-main:main.c library.h file.h types.h
+	cc -c main.c
 
+-library.o:library.c library.h types.h
+	cc -c library.c
+
+-file.o:file.c file.h types.h
+       cc -c file.c
+
+-clean:
+rm -f *.o library
+
+-execution 
+       ./library
 
 ## 💻 Application Menu
 
